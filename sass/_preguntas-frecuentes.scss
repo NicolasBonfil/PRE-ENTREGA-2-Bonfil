@@ -1,0 +1,23 @@
+.preguntas_frecuentes{
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    div{
+        border-radius: 8px;
+        font-size: 14.5px;
+        padding: 20px;
+        line-height: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    h6{
+        margin: 10px 0;
+    }
+    .titulo{
+        margin-bottom: 35px;
+    }
+    @media (max-width: 991px){
+        padding-top: 10rem;
+    }
+}

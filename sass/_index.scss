@@ -1,0 +1,74 @@
+.containerCarrusel{
+    margin-top: 70px;
+    margin-bottom: 40px;
+    @media (max-width: 991px){
+        z-index: -1;
+    }
+}
+
+.banner-productos{
+    grid-area: banner-productos;
+}
+
+.banner-colgantes{
+    grid-area: banner-colgantes;
+}
+
+.banner-pulseras{
+    grid-area: banner-pulseras;
+}
+
+.banner-aros{
+    grid-area: banner-aros;
+}
+
+.banners{
+    display: grid;
+    grid-template-areas:
+    "banner-productos banner-colgantes"
+    "banner-productos banner-pulseras"
+    "banner-productos banner-aros";
+    justify-content: center;
+    margin-bottom: 30px;
+    @media (max-width: 768px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px;
+    }
+}
+
+.banner-instagram{
+    margin-top: 23px;
+    background-color: rgb(224, 224, 235);
+    a{  
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 35px;
+        column-gap: 25px;
+        p{
+            color: black;
+            font-size: 40px;
+        }
+        .logo_instagram{
+            height: 40px;
+            width: 40px;
+        }
+    }
+}
+
+.inicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: 991px){
+        padding-top: 6rem;
+    }
+    .productos{
+        @media (max-width: 991px){
+            display: none;
+        }
+    }
+}

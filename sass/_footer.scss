@@ -1,0 +1,59 @@
+.redes{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 15px;
+    grid-area: redes;
+}
+
+.tienda-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: tienda-footer;
+    li{
+        list-style: none;
+        line-height: 2;
+    }
+}
+
+.ayuda-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: ayuda-footer;
+    li{
+        list-style: none;
+        line-height: 2;
+    }
+}
+
+.contacto-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: contacto-footer;
+    li{
+        list-style: none;
+        line-height: 2;
+    }
+}
+
+footer{
+    padding: 15px;
+    border-top: 1px solid rgba(44,62,80,0.14);
+    background-color: white;
+    display: grid;
+    grid-template-areas:
+    "redes redes redes"
+    "tienda-footer ayuda-footer contacto-footer";
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
+    text-align: center;
+}
+
+footer{
+    display: none;
+}

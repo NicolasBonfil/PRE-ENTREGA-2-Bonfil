@@ -1,0 +1,92 @@
+.productos{
+    @media (max-width: 991px){
+        padding-top: 10rem;
+    }
+}
+.colgantes, .pulseras, .aros{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 25px;
+    justify-content: center;
+    margin: 40px;
+    h5{
+        font-size: 16px;
+    }
+    @media (max-width: 991px){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+    }
+    @media (max-width: 768px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    @media (max-width: 535px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 20px;
+    }
+}
+
+.item{
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.10);
+    div{
+        width: 100%;
+    }
+    figure{
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+        img{
+            border-radius: 10px 10px 0 0;
+            transition: all .5s;
+            width: 100%;
+        }
+    }
+}
+
+.item:hover{
+    border-radius: 10px;
+    img{
+        transform: scale(1.2);
+        @media (max-width: 991px){
+            transform: none;
+        }
+    }
+}
+
+.infoProducto{
+    padding: 15px 15px 10px 15px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Open Sans", "sans-serif";
+    font-weight: 300;
+}
+
+.precio{
+    font-weight: 900;
+    text-align: center;
+}
+
+.filtros{
+    display: flex;
+    justify-content: right;
+    margin-right: 40px;
+    select{
+        border-radius: 0.35rem;
+        padding: 5px;
+        color: white;
+        background-color: black;
+    }
+}
