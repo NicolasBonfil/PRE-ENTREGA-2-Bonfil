@@ -1,3 +1,5 @@
+$width: 50px;
+
 .containerFormulario{
     display: flex;
     flex-direction: column;
@@ -10,7 +12,7 @@
         color: white;
         padding: 15px 10px;
         cursor: pointer;
-        width: 150px;
+        width: $width * 3;
     }
 }
 
@@ -19,28 +21,27 @@
 }
 
 input, textarea{
-    margin: 15px 0;
-    border: 1px solid rgba(44,62,80,0.14);
+    width: $width * 15;
     padding: 10px;
+    margin: 15px 0;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(44,62,80,0.14);
     font-family: "Rubik", "sans-serif";
     font-size: 12.5px;
-    border-radius: 0.25rem;
-    width: 778px;
     @media (max-width: 991px){
-        width: 400px;
+        width: $width * 8;
     }
     @media (max-width: 768px){
-        width: 450px;
+        width: $width * 9;
     }
     @media (max-width: 535px){
-        width: 350px;
+        width: $width * 7;
     }
 }
 
 .horarios, .telefono, .instagram, .mail{
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
     margin-bottom: 15px;
     gap: 10px;
@@ -48,14 +49,13 @@ input, textarea{
 
 .contactos{
     display: grid;
+    justify-content: center;
     grid-template-areas:
     "titulo"
     "infoContacto"
     "containerFormulario";
     padding: 30px;
     padding-top: 0px;
-    justify-content: center;
-    align-items: center;
     .titulo{
         margin-bottom: 35px;
     }

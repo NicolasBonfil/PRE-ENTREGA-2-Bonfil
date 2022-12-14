@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 *::after,
 *::before * {
   padding: 0;
@@ -14,18 +16,18 @@
 
 body {
   margin: 0 auto;
-  background-color: white;
+  background-color: rgb(255, 245, 250);
 }
 
 .titulo {
   display: flex;
   justify-content: center;
-  text-decoration: none;
   margin-top: 25px;
   color: rgb(36, 35, 35);
-  font-family: "Roboto", "sans-serif";
-  font-weight: 100;
-  font-size: 23px;
+  text-decoration: none;
+  font-family: "Inter", "sans-serif";
+  font-weight: 400;
+  font-size: 16px;
   grid-area: titulo;
 }
 @media (max-width: 768px) {
@@ -34,14 +36,9 @@ body {
   }
 }
 
-a {
+.ancla, a:hover, a {
   color: black;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-  color: black;
 }
 
 p {
@@ -51,7 +48,8 @@ p {
 .utilities {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: right;
+  gap: 25px;
   padding: 30px;
   grid-area: utilities;
 }
@@ -73,8 +71,6 @@ p {
   .cuenta {
     background-color: darkgrey;
     border: none;
-    display: flex;
-    flex-direction: row;
     justify-content: left;
     gap: 20px;
     padding: 15px;
@@ -95,37 +91,33 @@ p {
 
 .searchbox {
   padding: 20px;
+  width: 235px;
   grid-area: buscador;
 }
 
 aside {
+  height: 25px;
+  padding-right: 10px;
+  justify-content: center;
+  align-items: center;
   background-color: darkgrey;
   color: white;
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  height: 25px;
   font-size: 16px;
-  padding-right: 10px;
   grid-area: aside;
 }
 @media (max-width: 535px) {
   aside {
     height: 52px;
-    text-align: center;
   }
 }
 
 .logo {
   margin-bottom: 7px;
-  height: 125px;
-  width: 125px;
   border-radius: 10px;
 }
 @media (max-width: 991px) {
   .logo {
-    max-width: 40vw;
-    max-height: 60px;
     margin: 15px 0px;
     border-radius: 0px;
   }
@@ -135,8 +127,8 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-area: logo;
   margin-top: 10px;
+  grid-area: logo;
 }
 
 .containerNavbar {
@@ -144,7 +136,11 @@ aside {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: black;
   margin-bottom: 10px;
+  font-family: "Inter", "sans-serif";
+  font-weight: 400;
+  font-size: 13.3px;
   grid-area: nav;
 }
 .containerNavbar ul {
@@ -177,10 +173,10 @@ header {
 }
 @media (max-width: 991px) {
   .headerMobile {
+    background-color: white;
     display: grid;
     grid-template-areas: "aside aside aside" "nav logo utilities";
     grid-template-columns: 30% auto 30%;
-    background-color: white;
     align-items: center;
     justify-content: space-between;
     position: -webkit-sticky;
@@ -194,21 +190,69 @@ header {
 }
 
 .navbarMobile {
-  padding: 10px;
   justify-content: left;
   line-height: 2;
   grid-area: nav;
 }
+.navbarMobile a {
+  padding: 10px;
+}
+
+.dropdown-item {
+  color: rgb(80, 79, 79);
+  font-size: 13.3px;
+}
+
+.accordion-body {
+  padding: 0;
+}
+
+.accordion-item {
+  border: none;
+}
+.accordion-item button {
+  padding: 10px;
+}
+.accordion-item ul {
+  padding: 0 10px;
+  list-style: "-";
+  color: rgb(186, 186, 186);
+  font-size: 13.7px;
+}
+
+.btn:visited, .dropdown:visited {
+  border: 0 !important;
+  box-shadow: none;
+}
+
+.accordion-header:visited {
+  color: black;
+  border: 0 !important;
+  box-shadow: none;
+}
 
 .redes {
-  margin-top: 25px;
-  margin-bottom: 25px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
   -moz-column-gap: 15px;
        column-gap: 15px;
   grid-area: redes;
+}
+
+.lista, .contacto-footer li, .ayuda-footer li, .tienda-footer li {
+  list-style: none;
+  line-height: 2;
+}
+
+@media (max-width: 535px) {
+  .listaDesordenada, .contacto-footer ul, .ayuda-footer ul, .tienda-footer ul {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
 }
 
 .tienda-footer {
@@ -217,73 +261,85 @@ header {
   align-items: center;
   grid-area: tienda-footer;
 }
-.tienda-footer li {
-  list-style: none;
-  line-height: 2;
-}
-
 .ayuda-footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   grid-area: ayuda-footer;
 }
-.ayuda-footer li {
-  list-style: none;
-  line-height: 2;
-}
-
 .contacto-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   grid-area: contacto-footer;
 }
-.contacto-footer li {
-  list-style: none;
-  line-height: 2;
-}
-
 footer {
-  padding: 15px;
   border-top: 1px solid rgba(44, 62, 80, 0.14);
-  background-color: white;
   display: grid;
   grid-template-areas: "redes redes redes" "tienda-footer ayuda-footer contacto-footer";
   grid-template-columns: 1fr 1fr 1fr;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
   text-align: center;
+  padding: 15px;
 }
-
-footer {
-  display: none;
-}
-
-.containerCarrusel {
-  margin-top: 70px;
-  margin-bottom: 40px;
-}
-@media (max-width: 991px) {
-  .containerCarrusel {
-    z-index: -1;
+@media (max-width: 535px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+}
+footer ul {
+  padding: 0;
+}
+
+.banner-swarovski {
+  z-index: -1;
+  margin-bottom: 17px;
+}
+.banner-swarovski img {
+  width: 100%;
 }
 
 .banner-productos {
   grid-area: banner-productos;
 }
+.banner-productos img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.banner-productos h4 {
+  justify-content: left;
+  align-items: flex-end;
+  padding: 15px;
+  background-color: transparent;
+}
 
 .banner-colgantes {
   grid-area: banner-colgantes;
+}
+.banner-colgantes h4 {
+  justify-content: left;
+  align-items: flex-end;
+  padding: 15px;
+  background-color: transparent;
 }
 
 .banner-pulseras {
   grid-area: banner-pulseras;
 }
+.banner-pulseras h4 {
+  justify-content: center;
+  padding: 15px;
+  background-color: transparent;
+}
 
 .banner-aros {
   grid-area: banner-aros;
+}
+.banner-aros h4 {
+  justify-content: left;
+  align-items: flex-end;
+  padding: 15px;
+  background-color: transparent;
 }
 
 .banners {
@@ -297,13 +353,12 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 15px;
   }
 }
 
 .banner-instagram {
   margin-top: 23px;
-  background-color: rgb(224, 224, 235);
+  background-color: rgb(209, 209, 209);
 }
 .banner-instagram a {
   display: flex;
@@ -311,16 +366,13 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 35px;
-  -moz-column-gap: 25px;
-       column-gap: 25px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .banner-instagram a p {
   color: black;
-  font-size: 40px;
-}
-.banner-instagram a .logo_instagram {
-  height: 40px;
-  width: 40px;
+  font-size: 55px;
+  font-weight: 300;
 }
 
 .inicio {
@@ -330,8 +382,11 @@ footer {
 }
 @media (max-width: 991px) {
   .inicio {
-    padding-top: 6rem;
+    padding-top: 7.5rem;
   }
+}
+.inicio .productos {
+  padding: 0 70px;
 }
 @media (max-width: 991px) {
   .inicio .productos {
@@ -347,48 +402,41 @@ footer {
 
 .colgantes, .pulseras, .aros {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  row-gap: 25px;
   justify-content: center;
-  margin: 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 25px;
+  margin: 10px;
 }
 .colgantes h5, .pulseras h5, .aros h5 {
   font-size: 16px;
 }
 @media (max-width: 991px) {
   .colgantes, .pulseras, .aros {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
+    gap: 10px;
   }
 }
 @media (max-width: 768px) {
   .colgantes, .pulseras, .aros {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
   }
 }
 @media (max-width: 535px) {
   .colgantes, .pulseras, .aros {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    row-gap: 20px;
+    row-gap: 10px;
   }
 }
 
 .item {
-  padding-top: 5px;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
   align-items: center;
+  padding-top: 5px;
+  border-radius: 10px;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
-}
-.item div {
-  width: 100%;
 }
 .item figure {
   width: 100%;
@@ -414,15 +462,15 @@ footer {
 }
 
 .infoProducto {
-  padding: 15px 15px 10px 15px;
-  line-height: 1.5;
   display: flex;
   flex-direction: column;
   background-color: white;
+  padding: 15px 15px 10px 15px;
+  font-family: "Open Sans", "sans-serif";
   text-align: center;
   font-size: 16px;
-  font-family: "Open Sans", "sans-serif";
   font-weight: 300;
+  line-height: 1.5;
 }
 
 .precio {
@@ -431,36 +479,44 @@ footer {
 }
 
 .filtros {
+  margin: 20px;
   display: flex;
   justify-content: right;
-  margin-right: 40px;
 }
 .filtros select {
   border-radius: 0.35rem;
   padding: 5px;
-  color: white;
-  background-color: black;
+}
+@media (max-width: 768px) {
+  .filtros {
+    justify-content: center;
+  }
 }
 
 .preguntas_frecuentes {
-  line-height: 30px;
   display: flex;
   flex-direction: column;
   margin: 20px;
+  line-height: 30px;
 }
 .preguntas_frecuentes div {
-  border-radius: 8px;
-  font-size: 14.5px;
-  padding: 20px;
-  line-height: 25px;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 14.5px;
+  line-height: 25px;
 }
 .preguntas_frecuentes h6 {
-  margin: 10px 0;
+  margin-top: 35px;
+  margin-bottom: 5px;
 }
 .preguntas_frecuentes .titulo {
-  margin-bottom: 35px;
+  margin-bottom: 10px;
+}
+.preguntas_frecuentes ul {
+  list-style: "-";
+  padding: 0;
 }
 @media (max-width: 991px) {
   .preguntas_frecuentes {
@@ -489,13 +545,13 @@ footer {
 }
 
 input, textarea {
-  margin: 15px 0;
-  border: 1px solid rgba(44, 62, 80, 0.14);
+  width: 750px;
   padding: 10px;
+  margin: 15px 0;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(44, 62, 80, 0.14);
   font-family: "Rubik", "sans-serif";
   font-size: 12.5px;
-  border-radius: 0.25rem;
-  width: 778px;
 }
 @media (max-width: 991px) {
   input, textarea {
@@ -516,7 +572,6 @@ input, textarea {
 .horarios, .telefono, .instagram, .mail {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
   margin-bottom: 15px;
   gap: 10px;
@@ -524,11 +579,10 @@ input, textarea {
 
 .contactos {
   display: grid;
+  justify-content: center;
   grid-template-areas: "titulo" "infoContacto" "containerFormulario";
   padding: 30px;
   padding-top: 0px;
-  justify-content: center;
-  align-items: center;
 }
 .contactos .titulo {
   margin-bottom: 35px;

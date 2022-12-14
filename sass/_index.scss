@@ -1,25 +1,56 @@
-.containerCarrusel{
-    margin-top: 70px;
-    margin-bottom: 40px;
-    @media (max-width: 991px){
-        z-index: -1;
+@mixin contenido ($display, $direction){
+    display: $display;
+    flex-direction: $direction;
+}
+
+.banner-swarovski{
+    z-index: -1;
+    margin-bottom: 17px;
+    img{
+        width: 100%;
     }
 }
 
 .banner-productos{
     grid-area: banner-productos;
+    img{
+        object-fit: cover;
+    }
+    h4{
+        justify-content: left;
+        align-items:flex-end;
+        padding: 15px;
+        background-color: transparent;
+    }
 }
 
 .banner-colgantes{
     grid-area: banner-colgantes;
+    h4{
+        justify-content: left;
+        align-items:flex-end;
+        padding: 15px;
+        background-color: transparent;
+    }
 }
 
 .banner-pulseras{
     grid-area: banner-pulseras;
+    h4{
+        justify-content: center;
+        padding: 15px;
+        background-color: transparent;
+    }
 }
 
 .banner-aros{
     grid-area: banner-aros;
+    h4{
+        justify-content: left;
+        align-items: flex-end;
+        padding: 15px;
+        background-color: transparent;
+    }
 }
 
 .banners{
@@ -31,42 +62,36 @@
     justify-content: center;
     margin-bottom: 30px;
     @media (max-width: 768px){
-        display: flex;
-        flex-direction: column;
+        @include contenido(flex, column);
         align-items: center;
-        row-gap: 15px;
     }
 }
 
 .banner-instagram{
     margin-top: 23px;
-    background-color: rgb(224, 224, 235);
+    background-color: rgb(209, 209, 209);
     a{  
-        display: flex;
-        flex-direction: row;
+        @include contenido(flex, row);
         align-items: center;
         justify-content: center;
         padding: 35px;
-        column-gap: 25px;
+        column-gap: 10px;
         p{
             color: black;
-            font-size: 40px;
-        }
-        .logo_instagram{
-            height: 40px;
-            width: 40px;
+            font-size: 55px;
+            font-weight: 300;
         }
     }
 }
 
 .inicio{
-    display: flex;
-    flex-direction: column;
+    @include contenido(flex, column);
     align-items: center;
     @media (max-width: 991px){
-        padding-top: 6rem;
+        padding-top: 7.5rem;
     }
     .productos{
+        padding: 0 70px;
         @media (max-width: 991px){
             display: none;
         }

@@ -1,21 +1,29 @@
+@mixin contenido ($display, $direction){
+    display: $display;
+    flex-direction: $direction;
+}
+
 .preguntas_frecuentes{
-    line-height: 30px;
-    display: flex;
-    flex-direction: column;
+    @include contenido(flex, column);
     margin: 20px;
+    line-height: 30px;
     div{
+        @include contenido(flex, column);
+        padding: 20px;
         border-radius: 8px;
         font-size: 14.5px;
-        padding: 20px;
         line-height: 25px;
-        display: flex;
-        flex-direction: column;
     }
     h6{
-        margin: 10px 0;
+        margin-top: 35px;
+        margin-bottom: 5px;
     }
     .titulo{
-        margin-bottom: 35px;
+        margin-bottom: 10px;
+    }
+    ul{
+        list-style: "-";
+        padding: 0;
     }
     @media (max-width: 991px){
         padding-top: 10rem;

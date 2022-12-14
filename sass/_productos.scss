@@ -1,45 +1,43 @@
+@mixin contenido ($display, $direction){
+    display: $display;
+    flex-direction: $direction;
+}
+
 .productos{
     @media (max-width: 991px){
         padding-top: 10rem;
     }
 }
+
 .colgantes, .pulseras, .aros{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 20px;
-    row-gap: 25px;
     justify-content: center;
-    margin: 40px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 25px;
+    margin: 10px;
     h5{
         font-size: 16px;
     }
     @media (max-width: 991px){
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 15px;
+        gap: 10px;
     }
     @media (max-width: 768px){
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
     }
     @media (max-width: 535px){
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        row-gap: 20px;
+        row-gap: 10px;
     }
 }
 
 .item{
-    padding-top: 5px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
+    @include contenido(flex, column);
     align-items: center;
+    padding-top: 5px;
+    border-radius: 10px;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.10);
-    div{
-        width: 100%;
-    }
     figure{
         width: 100%;
         margin: 0;
@@ -63,15 +61,14 @@
 }
 
 .infoProducto{
-    padding: 15px 15px 10px 15px;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
+    @include contenido(flex, column);
     background-color: white;
+    padding: 15px 15px 10px 15px;
+    font-family: "Open Sans", "sans-serif";
     text-align: center;
     font-size: 16px;
-    font-family: "Open Sans", "sans-serif";
     font-weight: 300;
+    line-height: 1.5;
 }
 
 .precio{
@@ -80,13 +77,14 @@
 }
 
 .filtros{
+    margin: 20px;
     display: flex;
     justify-content: right;
-    margin-right: 40px;
     select{
         border-radius: 0.35rem;
         padding: 5px;
-        color: white;
-        background-color: black;
+    }
+    @media (max-width: 768px){
+        justify-content: center;
     }
 }

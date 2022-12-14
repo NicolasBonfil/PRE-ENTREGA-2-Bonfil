@@ -1,59 +1,79 @@
+@mixin contenido ($display, $direction){
+    display: $display;
+    flex-direction: $direction;
+}
+
 .redes{
+    @include contenido(flex, row);
+    justify-content: center;
     margin-top: 25px;
     margin-bottom: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     column-gap: 15px;
     grid-area: redes;
 }
 
+.lista{
+    list-style: none;
+    line-height: 2;
+}
+
+.listaDesordenada{
+    @media (max-width: 535px){
+        @include contenido(flex, row);
+        gap: 15px;
+    }
+}
+
 .tienda-footer{
-    display: flex;
-    flex-direction: column;
+    @include contenido(flex, column);
     align-items: center;
     grid-area: tienda-footer;
     li{
-        list-style: none;
-        line-height: 2;
+        @extend .lista;
+    }
+    ul{
+        @extend .listaDesordenada
     }
 }
 
 .ayuda-footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include contenido(flex, column);
     grid-area: ayuda-footer;
     li{
-        list-style: none;
-        line-height: 2;
+        @extend .lista;
+    }
+    ul{
+        @extend .listaDesordenada;
     }
 }
 
 .contacto-footer{
-    display: flex;
-    flex-direction: column;
+    @include contenido(flex, column);
     align-items: center;
     grid-area: contacto-footer;
     li{
-        list-style: none;
-        line-height: 2;
+        @extend .lista;
+    }
+    ul{
+        @extend .listaDesordenada;
     }
 }
 
 footer{
-    padding: 15px;
     border-top: 1px solid rgba(44,62,80,0.14);
-    background-color: white;
     display: grid;
     grid-template-areas:
     "redes redes redes"
     "tienda-footer ayuda-footer contacto-footer";
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 40px;
     text-align: center;
-}
-
-footer{
-    display: none;
+    padding: 15px;
+    @media (max-width: 535px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    ul{
+        padding: 0;
+    }
 }

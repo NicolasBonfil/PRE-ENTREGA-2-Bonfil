@@ -1,7 +1,12 @@
+@mixin contenido ($display, $direction){
+    display: $display;
+    flex-direction: $direction;
+}
+
 .utilities{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    @include contenido(flex, row);
+    justify-content: right;
+    gap: 25px;
     padding: 30px;
     grid-area: utilities;
     @media (max-width: 991px) {
@@ -10,8 +15,7 @@
 }
 
 .cuenta{
-    display: flex;
-    flex-direction: row;
+    @include contenido(flex, row);
     align-items: center;
     justify-content: center;
     border: 1px solid grey;
@@ -19,8 +23,6 @@
     @media (max-width: 991px){
         background-color: darkgrey;
         border: none;
-        display: flex;
-        flex-direction: row;
         justify-content: left;
         gap: 20px;
         padding: 15px;
@@ -41,33 +43,29 @@
 
 .searchbox{
     padding: 20px;
+    width: 235px;
     grid-area: buscador;
 }
 
 aside{
+    height: 25px;
+    padding-right: 10px;
+    justify-content: center;
+    align-items: center;
     background-color: darkgrey;
     color: white;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: 25px;
     font-size: 16px;
-    padding-right: 10px;
     grid-area: aside;
     @media (max-width: 535px){
         height: 52px;
-        text-align: center;
     }
 }
 
 .logo{
     margin-bottom: 7px;
-    height: 125px;
-    width: 125px;
     border-radius: 10px;
     @media (max-width: 991px){
-        max-width: 40vw;
-        max-height: 60px;
         margin: 15px 0px;
         border-radius: 0px;
     }
@@ -77,16 +75,19 @@ aside{
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-area: logo;
     margin-top: 10px;
+    grid-area: logo;
 }
 
 .containerNavbar{
-    display: flex;
-    flex-direction: column;
+    @include contenido(flex, column);
     align-items: center;
     justify-content: center;
+    color: black;
     margin-bottom: 10px;
+    font-family: "Inter", "sans-serif";
+    font-weight: 400;
+    font-size: 13.3px;
     grid-area: nav;
     ul{
         border-top: 1px solid rgb(43 48 42 / 20%);
@@ -115,12 +116,12 @@ header{
 .headerMobile{
     display: none;
     @media (max-width: 991px){
+        background-color: white;
         display: grid;
         grid-template-areas:
         "aside aside aside"
         "nav logo utilities";
         grid-template-columns: 30% auto 30%;
-        background-color: white;
         align-items: center;
         justify-content: space-between;
         position: sticky;
@@ -133,8 +134,43 @@ header{
 }
 
 .navbarMobile{
-    padding: 10px;
     justify-content: left;
     line-height: 2;
     grid-area: nav;
+    a{
+        padding: 10px;
+    }
+}
+
+.dropdown-item{
+    color: rgb(80, 79, 79);
+    font-size: 13.3px;
+}
+
+.accordion-body{
+    padding: 0;
+}
+
+.accordion-item{
+    border: none;
+    button{
+        padding: 10px;
+    }
+    ul{
+        padding: 0 10px;
+        list-style: "-";
+        color: rgb(186, 186, 186);
+        font-size: 13.7px;
+    }
+}
+
+.btn:visited, .dropdown:visited{
+    border: 0 !important;
+    box-shadow: none;
+}
+
+.accordion-header:visited{
+    color: black;
+    border: 0 !important;
+    box-shadow: none;
 }
