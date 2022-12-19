@@ -18,7 +18,7 @@
 }
 
 .listaDesordenada{
-    @media (max-width: 535px){
+    @media (max-width: 991px){
         @include contenido(flex, row);
         gap: 15px;
     }
@@ -45,6 +45,9 @@
     ul{
         @extend .listaDesordenada;
     }
+    @media (max-width: 991px) {
+        display: none;
+    }
 }
 
 .contacto-footer{
@@ -68,7 +71,7 @@ footer{
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     padding: 15px;
-    @media (max-width: 535px){
+    @media (max-width: 991px){
         display: flex;
         flex-direction: column;
         align-items: center;

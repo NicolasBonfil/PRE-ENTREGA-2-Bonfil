@@ -4,64 +4,69 @@
 }
 
 .banner-swarovski{
-    z-index: -1;
     margin-bottom: 17px;
     img{
         width: 100%;
     }
 }
 
-.banner-productos{
-    grid-area: banner-productos;
-    img{
-        object-fit: cover;
-    }
-    h4{
-        justify-content: left;
-        align-items:flex-end;
-        padding: 15px;
-        background-color: transparent;
-    }
-}
-
 .banner-colgantes{
+    position: relative;
+    display: inline-block;
+    text-align: center;
     grid-area: banner-colgantes;
-    h4{
-        justify-content: left;
-        align-items:flex-end;
-        padding: 15px;
-        background-color: transparent;
+    .texto{
+        position: absolute;
+        bottom: 2.5px;
+        left: 12px;
+        color: white;
+    }
+    img{
+        padding: 6px;
+        width: 100%;
     }
 }
 
 .banner-pulseras{
+    position: relative;
+    display: inline-block;
+    text-align: center;
     grid-area: banner-pulseras;
-    h4{
-        justify-content: center;
-        padding: 15px;
-        background-color: transparent;
+    .texto{
+        position: absolute;
+        bottom: 2.5px;
+        left: 12px;
+        color: white;
+    }
+    img{
+        padding: 6px;
+        width: 100%;
     }
 }
 
 .banner-aros{
+    position: relative;
+    display: inline-block;
+    text-align: center;
     grid-area: banner-aros;
-    h4{
-        justify-content: left;
-        align-items: flex-end;
-        padding: 15px;
-        background-color: transparent;
+    .texto{
+        position: absolute;
+        bottom: 2.5px;
+        left: 12px;
+        color: white
+    }
+    img{
+        padding: 6px;
+        width: 100%;
     }
 }
 
 .banners{
-    display: grid;
-    grid-template-areas:
-    "banner-productos banner-colgantes"
-    "banner-productos banner-pulseras"
-    "banner-productos banner-aros";
+    @include contenido(flex, row);
     justify-content: center;
+    gap: 5px;
     margin-bottom: 30px;
-    @media (max-width: 768px){
+    @media (max-width: 991px){
         @include contenido(flex, column);
         align-items: center;
     }
@@ -88,7 +93,10 @@
     @include contenido(flex, column);
     align-items: center;
     @media (max-width: 991px){
-        padding-top: 7.5rem;
+        padding-top: 8.66rem;
+    }
+    @media (max-width: 535px) {
+        padding-top: 10.32rem;
     }
     .productos{
         padding: 0 70px;

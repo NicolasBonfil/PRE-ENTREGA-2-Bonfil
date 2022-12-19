@@ -16,7 +16,7 @@
 
 body {
   margin: 0 auto;
-  background-color: rgb(255, 245, 250);
+  background-color: white;
 }
 
 .titulo {
@@ -94,13 +94,23 @@ p {
   width: 235px;
   grid-area: buscador;
 }
+.searchbox form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.searchbox form img {
+  cursor: pointer;
+}
 
 aside {
   height: 25px;
   padding-right: 10px;
   justify-content: center;
   align-items: center;
-  background-color: darkgrey;
+  background-color: black;
   color: white;
   text-align: center;
   font-size: 16px;
@@ -115,9 +125,13 @@ aside {
 .logo {
   margin-bottom: 7px;
   border-radius: 10px;
+  width: 125px;
+  height: 125px;
 }
 @media (max-width: 991px) {
   .logo {
+    width: 125px;
+    height: 72px;
     margin: 15px 0px;
     border-radius: 0px;
   }
@@ -161,6 +175,7 @@ header {
   border-bottom: 1px solid rgb(44, 62, 80);
   align-items: center;
   justify-content: space-between;
+  z-index: 1;
 }
 @media (max-width: 991px) {
   header {
@@ -214,10 +229,9 @@ header {
   padding: 10px;
 }
 .accordion-item ul {
-  padding: 0 10px;
-  list-style: "-";
-  color: rgb(186, 186, 186);
-  font-size: 13.7px;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
 }
 
 .btn:visited, .dropdown:visited {
@@ -247,7 +261,7 @@ header {
   line-height: 2;
 }
 
-@media (max-width: 535px) {
+@media (max-width: 991px) {
   .listaDesordenada, .contacto-footer ul, .ayuda-footer ul, .tienda-footer ul {
     display: flex;
     flex-direction: row;
@@ -266,6 +280,12 @@ header {
   flex-direction: column;
   grid-area: ayuda-footer;
 }
+@media (max-width: 991px) {
+  .ayuda-footer {
+    display: none;
+  }
+}
+
 .contacto-footer {
   display: flex;
   flex-direction: column;
@@ -280,7 +300,7 @@ footer {
   text-align: center;
   padding: 15px;
 }
-@media (max-width: 535px) {
+@media (max-width: 991px) {
   footer {
     display: flex;
     flex-direction: column;
@@ -292,63 +312,71 @@ footer ul {
 }
 
 .banner-swarovski {
-  z-index: -1;
   margin-bottom: 17px;
 }
 .banner-swarovski img {
   width: 100%;
 }
 
-.banner-productos {
-  grid-area: banner-productos;
-}
-.banner-productos img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.banner-productos h4 {
-  justify-content: left;
-  align-items: flex-end;
-  padding: 15px;
-  background-color: transparent;
-}
-
 .banner-colgantes {
+  position: relative;
+  display: inline-block;
+  text-align: center;
   grid-area: banner-colgantes;
 }
-.banner-colgantes h4 {
-  justify-content: left;
-  align-items: flex-end;
-  padding: 15px;
-  background-color: transparent;
+.banner-colgantes .texto {
+  position: absolute;
+  bottom: 2.5px;
+  left: 12px;
+  color: white;
+}
+.banner-colgantes img {
+  padding: 6px;
+  width: 100%;
 }
 
 .banner-pulseras {
+  position: relative;
+  display: inline-block;
+  text-align: center;
   grid-area: banner-pulseras;
 }
-.banner-pulseras h4 {
-  justify-content: center;
-  padding: 15px;
-  background-color: transparent;
+.banner-pulseras .texto {
+  position: absolute;
+  bottom: 2.5px;
+  left: 12px;
+  color: white;
+}
+.banner-pulseras img {
+  padding: 6px;
+  width: 100%;
 }
 
 .banner-aros {
+  position: relative;
+  display: inline-block;
+  text-align: center;
   grid-area: banner-aros;
 }
-.banner-aros h4 {
-  justify-content: left;
-  align-items: flex-end;
-  padding: 15px;
-  background-color: transparent;
+.banner-aros .texto {
+  position: absolute;
+  bottom: 2.5px;
+  left: 12px;
+  color: white;
+}
+.banner-aros img {
+  padding: 6px;
+  width: 100%;
 }
 
 .banners {
-  display: grid;
-  grid-template-areas: "banner-productos banner-colgantes" "banner-productos banner-pulseras" "banner-productos banner-aros";
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  gap: 5px;
   margin-bottom: 30px;
 }
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .banners {
     display: flex;
     flex-direction: column;
@@ -382,7 +410,12 @@ footer ul {
 }
 @media (max-width: 991px) {
   .inicio {
-    padding-top: 7.5rem;
+    padding-top: 8.66rem;
+  }
+}
+@media (max-width: 535px) {
+  .inicio {
+    padding-top: 10.32rem;
   }
 }
 .inicio .productos {
